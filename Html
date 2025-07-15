@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pensum Interactivo - Ing. Telecomunicaciones</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <h1>Pensum Interactivo de Ingeniería en Telecomunicaciones</h1>
+        <p>Haz clic en "Aprobar" para marcar una materia como superada y desbloquear las siguientes.</p>
+    </header>
+
+    <div class="pensum">
+        <div class="semestre">
+            <h2>Semestre I</h2>
+            <div class="materia" id="seminario1">
+                <span>Seminario I</span>
+                <button>Aprobar</button>
+            </div>
+            <div class="materia" id="ambiental">
+                <span>Educación Ambiental</span>
+                <button>Aprobar</button>
+            </div>
+            <div class="materia" id="hombreSociedad">
+                <span>Hombre, Sociedad, Ciencia y Tecnología</span>
+                <button>Aprobar</button>
+            </div>
+            <div class="materia" id="ingles1">
+                <span>Inglés I</span>
+                <button>Aprobar</button>
+            </div>
+            <div class="materia" id="dibujo">
+                <span>Dibujo</span>
+                <button>Aprobar</button>
+            </div>
+            <div class="materia" id="matematica1">
+                <span>Matemática I</span>
+                <button>Aprobar</button>
+            </div>
+            <div class="materia" id="geometria">
+                <span>Geometría Analítica</span>
+                <button>Aprobar</button>
+            </div>
+            <div class="materia" id="defensa1">
+                <span>Defensa Integral I</span>
+                <button>Aprobar</button>
+            </div>
+            <div class="materia" id="complementarias1">
+                <span>Actividades Complementarias I</span>
+                <button>Aprobar</button>
+            </div>
+        </div>
+
+        <div class="semestre">
+            <h2>Semestre II</h2>
+            <div class="materia blocked" id="seminario2" data-requisitos='["seminario1"]'>
+                <span>Seminario II</span>
+                <button disabled>Aprobar</button>
+            </div>
+            <div class="materia blocked" id="ingles2" data-requisitos='["ingles1"]'>
+                <span>Inglés II</span>
+                <button disabled>Aprobar</button>
+            </div>
+            <div class="materia blocked" id="quimica" data-requisitos='["matematica1", "geometria"]'>
+                <span>Química General</span>
+                <button disabled>Aprobar</button>
+            </div>
+            <div class="materia blocked" id="fisica1" data-requisitos='["matematica1", "geometria"]'>
+                <span>Física I</span>
+                <button disabled>Aprobar</button>
+            </div>
+            <div class="materia blocked" id="matematica2" data-requisitos='["matematica1", "geometria"]'>
+                <span>Matemática II</span>
+                <button disabled>Aprobar</button>
+            </div>
+            <div class="materia" id="algebra">
+                <span>Álgebra Lineal</span>
+                <button>Aprobar</button>
+            </div>
+            <div class="materia blocked" id="defensa2" data-requisitos='["defensa1"]'>
+                <span>Defensa Integral II</span>
+                <button disabled>Aprobar</button>
+            </div>
+            <div class="materia" id="complementarias2">
+                <span>Actividades Complementarias II</span>
+                <button>Aprobar</button>
+            </div>
+        </div>
+
+        <div class="semestre">
+            <h2>Semestre III</h2>
+            <div class="materia blocked" id="fisica2" data-requisitos='["matematica2", "fisica1"]'>
+                <span>Física II</span>
+                <button disabled>Aprobar</button>
+            </div>
+            <div class="materia blocked" id="matematica3" data-requisitos='["matematica2"]'>
+                <span>Matemática III</span>
+                <button disabled>Aprobar</button>
+            </div>
+            <div class="materia blocked" id="probabilidad" data-requisitos='["matematica2"]'>
+                <span>Probabilidad y Estadística</span>
+                <button disabled>Aprobar</button>
+            </div>
+            <div class="materia blocked" id="programacion" data-requisitos='["algebra"]'>
+                <span>Programación</span>
+                <button disabled>Aprobar</button>
+            </div>
+            <div class="materia blocked" id="transformadas" data-requisitos='["algebra", "matematica3"]'>
+                <span>Transformadas Integrales</span>
+                <button disabled>Aprobar</button>
+            </div>
+            <div class="materia blocked" id="defensa3" data-requisitos='["defensa2"]'>
+                <span>Defensa Integral III</span>
+                <button disabled>Aprobar</button>
+            </div>
+            <div class="materia" id="complementarias3">
+                <span>Actividades Complementarias III</span>
+                <button>Aprobar</button>
+            </div>
+        </div>
+
+        <div class="semestre">
+            <h2>Semestre IV</h2>
+            <div class="materia blocked" id="redes1" data-requisitos='["matematica3", "fisica2"]'>
+                <span>Redes Eléctricas I</span>
+                <button disabled>Aprobar</button>
+            </div>
+            <div class="materia blocked" id="senales" data-requisitos='["matematica3", "redes1"]'>
+                <span>Señales y Sistemas</span>
+                <button disabled>Aprobar</button>
+            </div>
+            <div class="materia blocked" id="fisica3" data-requisitos='["matematica3", "fisica2"]'>
+                <span>Física III</span>
+                <button disabled>Aprobar</button>
+            </div>
+            <div class="materia blocked" id="electromagnetica" data-requisitos='["matematica3", "fisica2"]'>
+                <span>Teoría Electromagnética</span>
+                <button disabled>Aprobar</button>
+            </div>
+            <div class="materia" id="marcoLegal">
+                <span>Marco Legal para el Ejercicio de la Ingeniería</span>
+                <button>Aprobar</button>
+            </div>
+            <div class="materia" id="seminarioTeleco1">
+                <span>Seminario de Telecomunicaciones I</span>
+                <button>Aprobar</button>
+            </div>
+            <div class="materia blocked" id="defensa4" data-requisitos='["defensa3"]'>
+                <span>Defensa Integral IV</span>
+                <button disabled>Aprobar</button>
+            </div>
+            <div class="materia" id="complementarias4">
+                <span>Actividades Complementarias IV</span>
+                <button>Aprobar</button>
+            </div>
+        </div>
+
+        <div class="semestre">
+            <h2>Semestre V</h2>
+            <div class="materia blocked" id="redes2" data-requisitos='["redes1"]'>
+                <span>Redes Eléctricas II</span>
+                <button disabled>Aprobar</button>
+            </div>
+            <div class="materia blocked" id="electronica1" data-requisitos='["fisica3"]'>
+                <span>Electrónica I</span>
+                <button disabled>Aprobar</button>
+            </div>
+            <div class="materia blocked" id="digitales" data-requisitos='["electronica1"]'>
+                <span>Sistemas Digitales</span>
+                <button disabled>Aprobar</button>
+            </div>
+            <div class="materia blocked" id="comunicaciones1" data-requisitos='["senales"]'>
+                <span>Comunicaciones I</span>
+                <button disabled>Aprobar</button>
+            </div>
+            <div class="materia blocked" id="lineas" data-requisitos='["electromagnetica"]'>
+                <span>Líneas de Transmisión</span>
+                <button disabled>Aprobar</button>
+            </div>
+            <div class="materia" id="electivaInformatica">
+                <span>Electiva No Técnica: Informática</span>
+                <button>Aprobar</button>
+            </div>
+            <div class="materia blocked" id="defensa5" data-requisitos='["defensa4"]'>
+                <span>Defensa Integral V</span>
+                <button disabled>Aprobar</button>
+            </div>
+            <div class="materia" id="complementarias5">
+                <span>Actividades Complementarias V: Cátedra Bolivariana I</span>
+                <button>Aprobar</button>
+            </div>
+        </div>
+
+        <div class="semestre">
+            <h2>Semestre VI</h2>
+            <div class="materia blocked" id="electronica2" data-requisitos='["electronica1"]'>
+                <span>Electrónica II</span>
+                <button disabled>Aprobar</button>
+            </div>
+            <div class="materia blocked" id="microprocesadores" data-requisitos='["digitales", "electronica1"]'>
+                <span>Microprocesadores</span>
+                <button disabled>Aprobar</button>
+            </div>
+            <div class="materia blocked" id="comunicaciones2" data-requisitos='["comunicaciones1"]'>
+                <span>Comunicaciones II</span>
+                <button disabled>Aprobar</button>
+            </div>
+            <div class="materia blocked" id="microondas" data-requisitos='["lineas"]'>
+                <span>Microondas</span>
+                <button disabled>Aprobar</button>
+            </div>
+            <div class="materia blocked" id="instrumentacion" data-requisitos='["comunicaciones1", "electronica2"]'>
+                <span>Instrumentación de las Telecomunicaciones</span>
+                <button disabled>Aprobar</button>
+            </div>
+            <div class="materia blocked" id="computacionAvanzada" data-requisitos='["digitales"]'>
+                <span>Computación Avanzada</span>
+                <button disabled>Aprobar</button>
+            </div>
+            <div class="materia blocked" id="defensa6" data-requisitos='["defensa5"]'>
+                <span>Defensa Integral VI</span>
+                <button disabled>Aprobar</button>
+            </div>
+            <div class="materia" id="complementarias6">
+                <span>Actividades Complementarias VI: Cátedra Bolivariana II</span>
+                <button>Aprobar</button>
+            </div>
+        </div>
+        
+        <div class="semestre">
+            <h2>Semestre VII</h2>
+            <div class="materia blocked" id="electronicaComunicaciones" data-requisitos='["electronica2", "comunicaciones2"]'>
+                <span>Electrónica de las Comunicaciones</span>
+                <button disabled>Aprobar</button>
+            </div>
+            <div class="materia" id="mantenimiento">
+                <span>Mantenimiento General</span>
+                <button>Aprobar</button>
+            </div>
+            <div class="materia blocked" id="sistemasComunicaciones1" data-requisitos='["comunicaciones2", "antenas"]'>
+                <span>Sistemas de Comunicaciones I</span>
+                <button disabled>Aprobar</button>
+            </div>
+            <div class="materia blocked" id="antenas" data-requisitos='["microondas"]'>
+                <span>Antenas</span>
+                <button disabled>Aprobar</button>
+            </div>
+            <div class="materia blocked" id="comunicacionesOpticas" data-requisitos='["comunicaciones2"]'>
+                <span>Comunicaciones Ópticas</span>
+                <button disabled>Aprobar</button>
+            </div>
+            <div class="materia" id="metodologia">
+                <span>Metodología de la Investigación</span>
+                <button>Aprobar</button>
+            </div>
+            <div class="materia blocked" id="defensa7" data-requisitos='["defensa6"]'>
+                <span>Defensa Integral VII</span>
+                <button disabled>Aprobar</button>
+            </div>
+            <div class="materia" id="electivaHigiene">
+                <span>Electiva No Técnica: Higiene y Seguridad Industrial</span>
+                <button>Aprobar</button>
+            </div>
+        </div>
+
+        <div class="semestre">
+            <h2>Semestre VIII</h2>
+            <div class="materia blocked" id="sistemasComunicaciones2" data-requisitos='["sistemasComunicaciones1"]'>
+                <span>Sistemas de Comunicaciones II</span>
+                <button disabled>Aprobar</button>
+            </div>
+            <div class="materia blocked" id="redesTelecom" data-requisitos='["sistemasComunicaciones2"]'>
+                <span>Redes de Telecomunicaciones</span>
+                <button disabled>Aprobar</button>
+            </div>
+            <div class="materia" id="seminarioTeleco2">
+                <span>Seminario de Telecomunicaciones II</span>
+                <button>Aprobar</button>
+            </div>
+            <div class="materia blocked" id="transmisionDatos" data-requisitos='["redesTelecom"]'>
+                <span>Transmisión de Datos</span>
+                <button disabled>Aprobar</button>
+            </div>
+            <div class="materia" id="electivaRadioenlaces">
+                <span>Electiva Técnica: Radioenlaces Digitales</span>
+                <button>Aprobar</button>
+            </div>
+            <div class="materia" id="electivaTelefonia">
+                <span>Electiva Técnica: Telefonía</span>
+                <button>Aprobar</button>
+            </div>
+            <div class="materia blocked" id="defensa8" data-requisitos='["defensa7"]'>
+                <span>Defensa Integral VIII</span>
+                <button disabled>Aprobar</button>
+            </div>
+        </div>
+
+        <div class="semestre">
+            <h2>Semestre IX</h2>
+            <div class="materia" id="pasantias">
+                <span>Pasantías</span>
+                <button>Aprobar</button>
+            </div>
+            <div class="materia" id="teg">
+                <span>Trabajo Especial de Grado</span>
+                <button>Aprobar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
